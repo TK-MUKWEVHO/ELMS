@@ -6,11 +6,40 @@ session_start();
 include "PHPcode/DBConnection.php";
 include "PHPcode/functions.php";
 $userData = checkLogin($db);
-
-
-
 include_once "head.php";
-$flexRadioDefault='fullday+';
+
+if($_SERVER['REQUEST_METHOD']=="POST"){
+
+    $leaveType=$_POST['leaveType'];
+    $duration="";
+    $radioVal=$_POST['flexRadioDefault'];
+    $dates="";
+    if($radioVal==="h"){
+        $duration="half Day";
+        $dates=$_POST['fromdate'];
+    }else{
+        $duration="Full Day";
+        $dates=$_POST['todate'];
+    }
+    $empno=$userData["EMPNO"];
+    $manid=$userData["MANAGERNO"];
+    $applyLeave="INSERT INTO tblLeaves (empno,managerno,leavetype,duration,dates)
+                VALUES ('{$empno}','{$manid}','{$leaveType}',{$duration},'{$dates}')";
+
+            if($db->query($applyLeave)===true){
+                echo " 
+           <script type='text/javascript'>
+           alert ('Successfully applied leave');
+           </script>";
+           header("location index.php");
+            }else{
+                echo " 
+           <script type='text/javascript'>
+           alert ('failed.$db->error');
+           </script>";
+            }
+}
+
 ?>
 <body>
     <div id="app">
@@ -74,13 +103,22 @@ $flexRadioDefault='fullday+';
                                              </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="f" checked>
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="f">
                                         <label class="form-check-label" for="flexRadioDefault2">
                                             Full day
                                         </label>
                                     </div>
                                 </div>
-                                    
+                                <div class="f select mb-3">
+                                        <div class="form-group has-icon-left">
+                                            <label for="first-name-icon">From Date And To Date</label>
+                                            <div class="position-relative">
+                                                <input type="text" class="form-control" id="picker" name="todate" required>
+                
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="h select mb-3"> 
                                         <div class="form-group has-icon-left">
                                             <label for="first-name-icon">Date</label>
@@ -91,18 +129,10 @@ $flexRadioDefault='fullday+';
                                         </div>
                                     </div>
                                     
-                                    <div class="f select mb-3">
-                                        <div class="form-group has-icon-left">
-                                            <label for="first-name-icon">From Date And To Date</label>
-                                            <div class="position-relative">
-                                                <input type="text" class="form-control" id="picker" name="todate" required>
-                
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                         
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" name="apply" class="btn btn-primary me-1 mb-1">Apply</button>
+                                        <button type="submit" name="apply" class="btn btn-primary me-1 mb-1" onclick="return confirm('Press OK to Confirm')">Apply</button>
                                     </div>
                                 </div>
                             </form>

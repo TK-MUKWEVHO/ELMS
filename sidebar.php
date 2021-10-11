@@ -9,7 +9,7 @@ include_once "PHPcode/DBconnection.php";
                 <div class="avatar me-1">
                               <img src="assets/images/coat.png" alt="" srcset="">
                            </div>   
-                <span>PORTAL<span> 
+                <span href="/">Home<span> 
                 </div>
                <div id="sidebar" class="sidebar-menu">
                     <ul class="menu">

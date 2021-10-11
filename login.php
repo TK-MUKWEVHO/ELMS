@@ -1,43 +1,33 @@
 <?php
 session_start();
-
+include_once "head.php";
 include_once "PHPcode/DBConnection.php";
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
-
     $persalNumber=$_POST['persalNumber'];
     $password=$_POST['password'];
 
-    if(!empty($persalNumber)&&!empty($password)){
-
-        $findUser=mysqli_query($db,"SELECT * FROM Account WHERE persalNumber='{$persalNumber}' limit 1");
-        
-        if(mysqli_num_rows($findUser)>0){
-
-            $data=mysqli_fetch_assoc($findUser);
-
-            if($password===$data['Password']){
-                
-                $_SESSION['persalNumber']=$data['persalNumber'];
-                
-                header("location: index.php");
-                die;
-            }
-            else{
-                echo "Incorrect Password";
-                header("location: login.php");
-            }  
-        }    
-        else{
-            echo "Employee does not exist";
+    $findUser=mysqli_query($db,"SELECT * FROM Account WHERE persalNumber='{$persalNumber}' limit 1");
+    if(mysqli_num_rows($findUser)>0){
+        $fetchUser=mysqli_fetch_assoc($findUser);
+        if($password===$fetchUser['Password']){
+            $_SESSION['persalNumber']=$fetchUser['persalNumber'];
+            header("location: index.php");
+            die;
+        }else{
+            echo " 
+           <script type='text/javascript'>
+           alert ('Incorrect Password');
+           </script>";
         }
+    }else{
+        echo " 
+           <script type='text/javascript'>
+           alert ('Employee does not exist');
+           </script>";
     }
- 
 }
-
-include_once "head.php";
 ?>
-
 <body>
     <div id="auth">
 
@@ -47,9 +37,6 @@ include_once "head.php";
                     <div class="card pt-4">
                     <img class="card-img-top" src="assets/images/images.png" alt="Card image" height="200px" >
                         <div class="card-body">
-                            <div class="text-center mb-5">
-                                <h3 >Welcome to Employee Portal</h3>
-                            </div>
                             <form  method="post" autocomplete="off">
                                 <div class="form-group position-relative has-icon-left">
                                     <label for="username">Username/Persal Number</label>
@@ -74,10 +61,7 @@ include_once "head.php";
                                         </div>
                                     </div>
                                 </div>
-                                <div class="clearfix">
-                                <a href="signup.php" class='float-start'>
-                                            <small>Not yet signed up?</small>
-                                        </a>
+                                
                                     <button class="btn btn-primary float-end" name="login" >Login</button>
                                 </div>
                             </form>
