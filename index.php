@@ -118,7 +118,7 @@ $userData = checkLogin($db);
                                               <ul class="list-group list-group-flush">
                                               <li class="list-group-item">Approved By: </li>
                                               <li class="list-group-item">Date: </li>
-                                              <li class="list-group-item">Attatch Proof:<input type="file" class="form-control" id="inputGroupFile01"> </li>
+                                              <!--<li class="list-group-item">Attatch Proof:<input type="file" class="form-control" id="inputGroupFile01" onchange="www.google.com"> </li>-->
                                             </ul>
                                             </div>
                                   

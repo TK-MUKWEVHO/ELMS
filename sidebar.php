@@ -37,6 +37,23 @@ include_once "PHPcode/DBconnection.php";
                             <?php
                         }
                      ?>
+                     <li class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'>
+                        <i class="fa fa-briefcase text-success"></i>
+                        <span>Manage Leaves</span>
+                        </a>
+                        <ul class="submenu ">
+                           <li>
+                              <a href="all_leave.php">All Leaves</a>
+                           </li>
+                           <li>
+                              <a href="fullDay_leave.php">Full Leaves</a>
+                           </li>
+                           <li>
+                              <a href="halfday_leave.php">Half Day Leaves</a>
+                           </li>
+                        </ul>
+                     </li>
                     </ul>
                  </div>
     <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
