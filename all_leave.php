@@ -55,18 +55,18 @@ $userData = checkLogin($db);
                                         <th>Leave Type</th>
                                         <th>Number of Day Taken</th>
                                         <th>Status</th>
-                                        <th>Capture</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>John Doe</td>
+                                        <td>John Doe (EMPNO)</td>
                                         <td>Sick Leave</td>
                                         <td>2021</td>
                                         <td>
                                             <span class="badge bg-success">Approved</span>
                                         </td>
-                                        <td><a href="captureLeave.php"><i class="fa fa-eye text-success"></i>Click</a></td>
+                                        <td><a href="captureLeave.php"><span class="badge bg-primary">Capture Leave</span></a></td>
                                     </tr>
                                 </tbody>
                             </table>
