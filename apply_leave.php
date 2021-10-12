@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class='breadcrumb-header'>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html" class="text-success">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="index.php" class="text-success">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Leave Application</li>
                     </ol>
                 </nav>
@@ -146,9 +146,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             });
 
         $('#picker').daterangepicker({
-            autoApply: true,
-            startDate: '11/10/2021',
-            endDate: '12/10/2021'
+            autoApply: false,
         });
         </script>
     <script src="assets/js/feather-icons/feather.min.js"></script>

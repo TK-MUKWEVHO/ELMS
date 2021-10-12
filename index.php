@@ -114,12 +114,14 @@ $userData = checkLogin($db);
                                             <textarea class="form-control" name="comment" value="From database" readonly>sssssss</textarea>
                                             <label for="floatingTextarea">Message</label>
                                             </div>
-                                            <div></div>
+                                            <div>
                                               <ul class="list-group list-group-flush">
                                               <li class="list-group-item">Approved By: </li>
                                               <li class="list-group-item">Date: </li>
+                                              <li class="list-group-item">Attatch Proof:<input type="file" class="form-control" id="inputGroupFile01"> </li>
                                             </ul>
                                             </div>
+                                  
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             </div>
