@@ -14,30 +14,16 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $duration="";
     $radioVal=$_POST['flexRadioDefault'];
     $dates="";
-    if($radioVal==="h"){
-        $duration="half Day";
-        $dates=$_POST['fromdate'];
-    }else{
-        $duration="Full Day";
-        $dates=$_POST['todate'];
-    }
-    $empno=$userData["EMPNO"];
-    $manid=$userData["MANAGERNO"];
-    $applyLeave="INSERT INTO tblLeaves (empno,managerno,leavetype,duration,dates)
-                VALUES ('{$empno}','{$manid}','{$leaveType}',{$duration},'{$dates}')";
+    $status="Panding";
 
-            if($db->query($applyLeave)===true){
-                echo " 
-           <script type='text/javascript'>
-           alert ('Successfully applied leave');
-           </script>";
-           header("location index.php");
-            }else{
-                echo " 
-           <script type='text/javascript'>
-           alert ('failed.$db->error');
-           </script>";
-            }
+    switch($radioVal){
+        case "h":
+            $date=$_POST['fromdate'];
+            break;
+        case "f":
+            $date=$_POST['todate'];
+    }
+    echo $date;
 }
 
 ?>
@@ -103,7 +89,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                                              </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="f">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="f" checked>
                                         <label class="form-check-label" for="flexRadioDefault2">
                                             Full day
                                         </label>
@@ -156,10 +142,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                     $(targetBox).show();
                     
                 });
+                $('input[type="radio"]:checked').click();
             });
 
         $('#picker').daterangepicker({
-            autpApply: true,
+            autoApply: true,
             startDate: '11/10/2021',
             endDate: '12/10/2021'
         });
