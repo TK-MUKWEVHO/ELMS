@@ -61,15 +61,14 @@ $userData = checkLogin($db);
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Takalani</td>
+                                        <td>John Doe (EMPNO)</td>
                                         <td>Sick Leave</td>
                                         <td>2021</td>
                                         <td>
                                             <span class="badge bg-success">Approved</span>
                                         </td>
-                                        <td><a href="captureLeave.php"><i class="fa fa-eye text-success"></i></a></td>
+                                        <td><a href="captureLeave.php"><span class="badge bg-primary">Capture Leave</span></a></td>
                                     </tr>
-        
                                 </tbody>
                             </table>
                         </div>
