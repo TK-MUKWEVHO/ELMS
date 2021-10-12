@@ -36,6 +36,8 @@ include_once "PHPcode/DBconnection.php";
                             </li>
                             <?php
                         }
+
+                        if($userData['DEPTCODE']==="HRM"){
                      ?>
                      <li class="sidebar-item  has-sub">
                         <a href="#" class='sidebar-link'>
@@ -54,6 +56,9 @@ include_once "PHPcode/DBconnection.php";
                            </li>
                         </ul>
                      </li>
+                     <?php
+                        }
+                     ?>
                     </ul>
                  </div>
     <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
