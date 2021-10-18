@@ -1,8 +1,6 @@
 
 <?php
-
 session_start();
-
 include "PHPcode/DBConnection.php";
 include "PHPcode/functions.php";
 $userData = checkLogin($db);
@@ -48,9 +46,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         </div>
 
     </div>
-
-
-    <!-- // Basic multiple Column Form section start -->
+    
     <section id="multiple-column-form">
         <div class="row match-height">
             <div class="col-8">
