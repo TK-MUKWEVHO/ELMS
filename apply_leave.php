@@ -11,10 +11,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $leaveType=$_POST['leaveType'];
     $duration="";
     $radioVal=$_POST['flexRadioDefault'];
-    $dates="";
+    $date="";
     $status="Panding";
 
     switch($radioVal){
+
         case "h":
             $date=$_POST['fromdate'];
             break;
