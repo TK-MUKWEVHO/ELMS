@@ -22,6 +22,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             break;
         case "f":
             $date=$_POST['todate'];
+            break;
     }
     echo $date;
 }
