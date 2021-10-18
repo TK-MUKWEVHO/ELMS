@@ -3,6 +3,7 @@ session_start();
 include "PHPcode/DBConnection.php";
 include "PHPcode/functions.php";
 $userData = checkLogin($db);
+
 ?>
 
 <?php include_once "head.php"?>
