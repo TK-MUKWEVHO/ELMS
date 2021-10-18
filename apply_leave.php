@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $leaveType=$_POST['leaveType'];
     $duration="";
     $radioVal=$_POST['flexRadioDefault'];
-    $date="";
+    $dates="";
     $status="Panding";
 
     switch($radioVal){
@@ -19,9 +19,13 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         case "h":
             $date=$_POST['fromdate'];
             break;
-        case "f":
-            $date=$_POST['todate'];
-            break;
+
+            case "f":
+                $date=$_POST['todate'];
+                break;
+        default:
+            $date=$_POST[' '];
+            
     }
     echo $date;
 }
@@ -93,21 +97,21 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                                         </label>
                                     </div>
                                 </div>
-                                <div class="f select mb-3">
+                                <div class="h select mb-3">
                                         <div class="form-group has-icon-left">
                                             <label for="first-name-icon">From Date And To Date</label>
                                             <div class="position-relative">
-                                                <input type="text" class="form-control" id="picker" name="todate" required>
+                                                <input type="text" class="form-control" id="picker" name="fromdate" required>
                 
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="h select mb-3"> 
+                                    <div class="f select mb-3"> 
                                         <div class="form-group has-icon-left">
                                             <label for="first-name-icon">Date</label>
                                             <div class="position-relative">
-                                                <input type="date" class="form-control" name="fromdate" required>
+                                                <input type="date" class="form-control" name="todate" required>
                                     
                                             </div>
                                         </div>
