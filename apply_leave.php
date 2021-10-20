@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include "PHPcode/DBConnection.php";
@@ -19,7 +18,6 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         case "h":
             $date=$_POST['fromdate'];
             break;
-
             case "f":
                 $date=$_POST['todate'];
                 break;
@@ -99,9 +97,9 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                                 </div>
                                 <div class="h select mb-3">
                                         <div class="form-group has-icon-left">
-                                            <label for="first-name-icon">From Date And To Date</label>
+                                            <label for="first-name-icon">Date</label>
                                             <div class="position-relative">
-                                                <input type="text" class="form-control" id="picker" name="fromdate" required>
+                                                <input type="date" class="form-control" name="fromdate">
                 
                                             </div>
                                         </div>
@@ -109,9 +107,9 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
                                     <div class="f select mb-3"> 
                                         <div class="form-group has-icon-left">
-                                            <label for="first-name-icon">Date</label>
+                                            <label for="first-name-icon">From Date And To Date</label>
                                             <div class="position-relative">
-                                                <input type="date" class="form-control" name="todate" required>
+                                                <input type="text" class="form-control" id="picker" name="todate">
                                     
                                             </div>
                                         </div>
