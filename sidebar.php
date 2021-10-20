@@ -26,39 +26,47 @@ include_once "PHPcode/DBconnection.php";
                           </a>
                        </li>
                        <?php
-                        if($userData['MANAGERNO']===null){
-                        ?>
-                            <li class="sidebar-item">
+
+                       if($userData['DEPTCODE']==="HRM" && $userData['MANAGERNO']!==null)
+                       { ?>
+                           <li class="sidebar-item">
                                 <a href="panding_leaves.php" class='sidebar-link'>
                                 <i class="fa fa-spinner text-success"></i>
                                 <span>Approve Leaves</span>
                                 </a>
                             </li>
-                            <?php
+                              <li class="sidebar-item  has-sub">
+                              <a href="#" class='sidebar-link'>
+                              <i class="fa fa-briefcase text-success"></i>
+                              <span>Manage Leaves</span>
+                              </a>
+                              <ul class="submenu ">
+                                 <li>
+                                    <a href="all_leave.php">All Leaves</a>
+                                 </li>
+                                 <li>
+                                    <a href="fullDay_leave.php">Full Leaves</a>
+                                 </li>
+                                 <li>
+                                    <a href="halfday_leave.php">Half Day Leaves</a>
+                                 </li>
+                              </ul>
+                           </li>
+                           <?php
                         }
+                             if($userData['DEPTCODE']==="HRM" && $userData['MANAGERNO']===null){?>
+                                 <li class="sidebar-item">
+                                <a href="panding_leaves.php" class='sidebar-link'>
+                                <i class="fa fa-spinner text-success"></i>
+                                <span>Approve Leaves</span>
+                                </a>
+                            </li>   
 
-                        if($userData['DEPTCODE']==="HRM"){
-                     ?>
-                     <li class="sidebar-item  has-sub">
-                        <a href="#" class='sidebar-link'>
-                        <i class="fa fa-briefcase text-success"></i>
-                        <span>Manage Leaves</span>
-                        </a>
-                        <ul class="submenu ">
-                           <li>
-                              <a href="all_leave.php">All Leaves</a>
-                           </li>
-                           <li>
-                              <a href="fullDay_leave.php">Full Leaves</a>
-                           </li>
-                           <li>
-                              <a href="halfday_leave.php">Half Day Leaves</a>
-                           </li>
-                        </ul>
-                     </li>
-                     <?php
-                        }
-                     ?>
+                           <?php
+                            
+                             }
+                           ?>
+                     
                     </ul>
                  </div>
     <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
