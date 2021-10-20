@@ -5,7 +5,6 @@ include "PHPcode/functions.php";
 $userData = checkLogin($db);
 
 ?>
-
 <?php include_once "head.php"?>
    <body>
       <div id="app">
