@@ -5,12 +5,25 @@ include "PHPcode/functions.php";
 $userData = checkLogin($db);
 
 ?>
-<?php include_once "head.php"?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISA EMPLOYEE PORTAL</title>
+    <link rel="icon" href="assets/images/coat.png">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/simple-datatables/style.css">
+
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+</head>
    <body>
       <div id="app">
       <?php include_once "sidebar.php";?>
 	<div class="main-content container-fluid">
-<div class="page-title">
+  <div class="page-title">
                   <h3>Leave Credits</h3>
                </div>
                <section class="section">
@@ -147,6 +160,8 @@ $userData = checkLogin($db);
       <script src="assets/js/feather-icons/feather.min.js"></script>
       <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
       <script src="assets/js/app.js"></script>
+      <script src="assets/vendors/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/js/vendors.js"></script>
       <script src="assets/vendors/chartjs/Chart.min.js"></script>
       <script src="assets/vendors/apexcharts/apexcharts.min.js"></script>
       <script src="assets/js/pages/dashboard.js"></script>
