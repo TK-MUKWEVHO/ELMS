@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     }else{
         echo " 
            <script type='text/javascript'>
-           alert ('Employee does not exist');
+           alert ('Employee does not exist');      
            </script>";
     }
 }

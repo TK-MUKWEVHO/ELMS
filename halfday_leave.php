@@ -40,7 +40,7 @@ $userData = checkLogin($db);
                             <nav aria-label="breadcrumb" class='breadcrumb-header'>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.php" class="text-success">Dashboard</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Half Day Leavea</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Half Day Leave</li>
                                 </ol>
                             </nav>
                         </div>

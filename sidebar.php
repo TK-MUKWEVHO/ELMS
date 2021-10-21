@@ -27,14 +27,8 @@ include_once "PHPcode/DBconnection.php";
                        </li>
                        <?php
 
-                       if($userData['DEPTCODE']==="HRM" && $userData['MANAGERNO']!==null)
-                       { ?>
-                           <li class="sidebar-item">
-                                <a href="panding_leaves.php" class='sidebar-link'>
-                                <i class="fa fa-spinner text-success"></i>
-                                <span>Approve Leaves</span>
-                                </a>
-                            </li>
+                       
+                       if ($userData['MANAGERNO']!==null && $userData['DEPTCODE']==="HRM") {?>
                               <li class="sidebar-item  has-sub">
                               <a href="#" class='sidebar-link'>
                               <i class="fa fa-briefcase text-success"></i>
@@ -54,7 +48,7 @@ include_once "PHPcode/DBconnection.php";
                            </li>
                            <?php
                         }
-                             if($userData['DEPTCODE']==="HRM" && $userData['MANAGERNO']===null){?>
+                        if($userData['MANAGERNO']===null || $userData['MANAGERNO']===0 ){?>
                                  <li class="sidebar-item">
                                 <a href="panding_leaves.php" class='sidebar-link'>
                                 <i class="fa fa-spinner text-success"></i>
