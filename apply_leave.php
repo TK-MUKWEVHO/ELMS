@@ -56,7 +56,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" method="post">
+                            <form class="form" method="post" onsubmit="return validateForm()">
                                 <div class="row"> 
                                     <div class="mb-3">
                                         <div class="form-group has-icon-left">
@@ -110,7 +110,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
                                             <label for="first-name-icon">From Date And To Date</label>
                                             <div class="position-relative">
                                                 <input type="text" class="form-control" id="picker" name="todate">
-                                    
+                                                                
                                             </div>
                                         </div>
                                     </div>
@@ -149,6 +149,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
             autoApply: false,
         });
         </script>
+    
     <script src="assets/js/feather-icons/feather.min.js"></script>
     <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="assets/js/app.js"></script>   

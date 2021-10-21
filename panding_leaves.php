@@ -65,11 +65,11 @@ $userData = checkLogin($db);
                                         <td>Sick Leave</td>
                                         <td>2021-11-01</td>
                                         <td>
-                                            <span class="badge bg-primary">Panding</span>
+                                            <span class="badge bg-primary">Panding Approval</span>
                                         </td>
                                         <td>
                                             <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                         Take Action
                                         </button>
 
