@@ -96,7 +96,7 @@ $userData = checkLogin($db);
                                         <td>20-Dec-2021 until 22-Dec-2021</td>
                                         <td>   
                                             <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                         Approved
                                         </button>
 
